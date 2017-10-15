@@ -1,0 +1,90 @@
+/*
+    Stylesheet for PhysikOnline's support widget.
+    Include this and the corresponding 'support-mail.js' file to activate the widget.
+
+    Author: Lars Gröber
+ */
+
+$background-color: #005EAA;
+$background-color-accent: #e67e22;
+$font-color: white;
+$full-width: 600px;     // max width of widget
+$max-height: 70vh;      // max height w/o icon
+$icon-height: 50px;
+
+// main-div,
+#support-mail-main {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: $full-width;
+  max-width: 100%;
+}
+
+// help/close icon
+#support-mail-icon {
+  position: absolute;
+  right: 0;
+  top: -$icon-height;
+  height: $icon-height;
+  width: $icon-height;
+  background-color: $background-color;
+  border-top-left-radius: 20px;
+  cursor: pointer;
+
+  span {
+    left: 50%;
+    top: 50%;
+    padding: 10px;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    color: $font-color;
+  }
+}
+
+// actual widget content
+#support-mail-form {
+  background-color: $background-color;
+  max-height: $max-height;
+  overflow-y: auto;
+  display: none;
+  border-top: $background-color 20px solid;
+  padding: 0 20px 20px 20px;
+  color: $font-color;
+
+  @media (min-width: $full-width) {
+    border-top-left-radius: 20px;
+  }
+}
+
+// style submit-button
+#support-mail-submit {
+  background-color: $background-color-accent;
+  color: $font-color;
+  border: none;
+}
+
+// make textarea not resizable
+#support-mail-body {
+  resize: none;
+}
+
+// smiley in success/error message
+#support-mail-error-smiley {
+  text-align: center;
+  font-size: 100px;
+  margin-bottom: 30px;
+}
+
+// "build with *heart* by PO"
+#support-mail-poweredByPO {
+  float: right;
+
+  a {
+    color: $font-color;
+  }
+}
+
+.no-margin {
+  margin: 0;
+}
